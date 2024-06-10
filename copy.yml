@@ -1,0 +1,11 @@
+- name: 'Test playbook to write content into a file'
+  hosts: localhost
+  gather_facts: false
+  vars:
+    content: 'this is i am writing in the auto.sh file via ansible'
+    filepath: '/home/ubuntu/auto.sh'
+  tasks:
+    - name: "Write content into a file"
+      copy:
+        dest: "{{ filepath }}"
+        content: "{{ content }}"
